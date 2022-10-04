@@ -101,11 +101,11 @@ const EditLot = ({ lotID }) => {
           <input placeholder={editLot.TappingScrap} />
         </Form.Field>
         <Form.Field>
-          <label>VS / Pack "Counter Total": </label>
+          <label>VS / Pack Counter Total: </label>
           <input placeholder={editLot.VSPackCounterTotal} />
         </Form.Field>
         <Form.Field>
-          <label>VS / Pack "Scrap Weight": </label>
+          <label>VS / Pack Scrap Weight: </label>
           <input placeholder={editLot.VSPackScrap} />
         </Form.Field>
         <Button basic color="orange">

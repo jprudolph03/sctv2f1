@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Card, Header, Form, Container } from "semantic-ui-react";
 import VSPackReportForm from "../components/VSPackReportForm";
 
-const vsPackScrap = () => {
+const VsPackScrap = () => {
   const [currentVSPackLots, setCurrentVSPackLots] = useState([]);
   useEffect(() => {
     fetch("https://scrap-tracker.herokuapp.com/api/lot")
@@ -35,4 +35,4 @@ const vsPackScrap = () => {
   );
 };
 
-export default vsPackScrap;
+export default VsPackScrap;

@@ -3,7 +3,7 @@ import { Button, Card, Header, Form, Container } from "semantic-ui-react";
 
 import ReportForm from "../components/ReportForm";
 
-const forgingScrap = () => {
+const ForgingScrap = () => {
   const [currentForgingLots, setCurrentForgingLots] = useState([]);
   useEffect(() => {
     fetch("https://scrap-tracker.herokuapp.com/api/lot")
@@ -36,4 +36,4 @@ const forgingScrap = () => {
   );
 };
 
-export default forgingScrap;
+export default ForgingScrap;

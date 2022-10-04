@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Card, Header, Form, Container } from "semantic-ui-react";
 import TappingReportForm from "../components/TappingReportForm";
 
-const tappingScrap = () => {
+const TappingScrap = () => {
   const [currentTappingLots, setCurrentTappingLots] = useState([]);
   useEffect(() => {
     fetch("https://scrap-tracker.herokuapp.com/api/lot")
@@ -35,4 +35,4 @@ const tappingScrap = () => {
   );
 };
 
-export default tappingScrap;
+export default TappingScrap;

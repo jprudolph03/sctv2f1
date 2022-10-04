@@ -3,7 +3,7 @@ import { Button, Card, Header, Form, Container } from "semantic-ui-react";
 
 import PressingReportForm from "../components/PressingReportForm";
 
-const pressingScrap = () => {
+const PressingScrap = () => {
   const [currentPressingLots, setCurrentPressingLots] = useState([]);
   useEffect(() => {
     fetch("https://scrap-tracker.herokuapp.com/api/lot")
@@ -34,4 +34,4 @@ const pressingScrap = () => {
   );
 };
 
-export default pressingScrap;
+export default PressingScrap;
