@@ -28,6 +28,46 @@ const DetailID = () => {
     getLot();
   }, [router.query.id]);
 
+  const ForgTTotal = parseInt(
+    singleLotInfo.ForgingCounterTotal -
+      (singleLotInfo.ForgingScrap / singleLotInfo.singlePartWeight) * 1000
+  );
+
+  const ForgTPercent = parseFloat(
+    ((singleLotInfo.ForgingCounterTotal -
+      (singleLotInfo.ForgingScrap / singleLotInfo.singlePartWeight) * 1000) /
+      singleLotInfo.eXt) *
+      100 -
+      100
+  ).toFixed(2);
+
+  const PressTTotal = parseInt(
+    singleLotInfo.PressingCounterTotal -
+      (singleLotInfo.PressingScrap / singleLotInfo.singlePartWeight) * 1000
+  );
+
+  const PressTPercent = parseInt(
+    (PressTTotal / ForgTTotal) * 100 - 100
+  ).toFixed(2);
+
+  const TappTTotal = parseInt(
+    singleLotInfo.TappingCounterTotal -
+      (singleLotInfo.TappingScrap / singleLotInfo.singlePartWeight) * 1000
+  );
+
+  const TappTPercent = parseFloat(
+    (TappTTotal / PressTTotal) * 100 - 100
+  ).toFixed(2);
+
+  const VSPTTotal = parseInt(
+    singleLotInfo.VSPackCounterTotal -
+      (singleLotInfo.VSPackScrap / singleLotInfo.singlePartWeight) * 1000
+  );
+
+  const VSPTPercent = parseFloat((VSPTTotal / TappTTotal) * 100 - 100).toFixed(
+    2
+  );
+
   const infoTable = singleLotInfo ? (
     <Table.Row>
       <Table.Cell></Table.Cell>
@@ -35,69 +75,21 @@ const DetailID = () => {
       <Table.Cell>
         {singleLotInfo.ForgingCounterTotal}
         <hr />
-        {parseInt(
-          singleLotInfo.ForgingCounterTotal -
-            (singleLotInfo.ForgingScrap / singleLotInfo.singlePartWeight) * 1000
-        )}{" "}
-        /{" "}
-        {parseFloat(
-          ((singleLotInfo.ForgingCounterTotal -
-            (singleLotInfo.ForgingScrap / singleLotInfo.singlePartWeight) *
-              1000) /
-            singleLotInfo.eXt) *
-            100 -
-            100
-        ).toFixed(2)}
+        {ForgTTotal} / {ForgTPercent}
       </Table.Cell>
       <Table.Cell>
         {singleLotInfo.PressingCounterTotal} <hr />
-        {parseInt(
-          singleLotInfo.ForgingCounterTotal -
-            (singleLotInfo.ForgingScrap / singleLotInfo.singlePartWeight) * 1000
-        )}{" "}
-        /{" "}
-        {parseFloat(
-          ((singleLotInfo.ForgingCounterTotal -
-            (singleLotInfo.ForgingScrap / singleLotInfo.singlePartWeight) *
-              1000) /
-            singleLotInfo.eXt) *
-            100 -
-            100
-        ).toFixed(2)}
+        {PressTTotal} / {PressTPercent}
       </Table.Cell>
       <Table.Cell>
         {singleLotInfo.TappingCounterTotal}
         <hr />
-        {parseInt(
-          singleLotInfo.ForgingCounterTotal -
-            (singleLotInfo.ForgingScrap / singleLotInfo.singlePartWeight) * 1000
-        )}{" "}
-        /{" "}
-        {parseFloat(
-          ((singleLotInfo.ForgingCounterTotal -
-            (singleLotInfo.ForgingScrap / singleLotInfo.singlePartWeight) *
-              1000) /
-            singleLotInfo.eXt) *
-            100 -
-            100
-        ).toFixed(2)}
+        {TappTTotal} / {TappTPercent}
       </Table.Cell>
       <Table.Cell>
         {singleLotInfo.VSPackCounterTotal}
         <hr />
-        {parseInt(
-          singleLotInfo.ForgingCounterTotal -
-            (singleLotInfo.ForgingScrap / singleLotInfo.singlePartWeight) * 1000
-        )}{" "}
-        /{" "}
-        {parseFloat(
-          ((singleLotInfo.ForgingCounterTotal -
-            (singleLotInfo.ForgingScrap / singleLotInfo.singlePartWeight) *
-              1000) /
-            singleLotInfo.eXt) *
-            100 -
-            100
-        ).toFixed(2)}
+        {VSPTTotal} / {VSPTPercent}
       </Table.Cell>
     </Table.Row>
   ) : null;
@@ -122,7 +114,15 @@ const DetailID = () => {
         </Table.Header>
         <Table.Body>{infoTable}</Table.Body>
       </Table>
-      <TestBarEx />
+      <TestBarEx
+        t1Data={[
+          ForgTTotal,
+          PressTTotal,
+          TappTTotal,
+          VSPTTotal,
+          singleLotInfo.eXt,
+        ]}
+      />
     </div>
   );
 };

@@ -6,6 +6,7 @@ import { Table, Header, Icon, Step, StepContent } from "semantic-ui-react";
 
 const ROUTE_LOT_ID = "lotDetails/[id]";
 const ROUTE_EDIT_LOT = "editLot/[id]";
+const ROUTE_DELETE_LOT = "deleteLot/[id]";
 
 const ActiveLotTable = () => {
   const [activeLots, setActiveLots] = useState([]);
@@ -21,10 +22,6 @@ const ActiveLotTable = () => {
         setIsLoading(false);
       });
   }, []);
-
-  const handleDeleteLot = ({ id }) => {
-    console.log(id, "blah blah");
-  };
 
   const gTable = activeLots?.map((lot) => (
     <Table.Row key={lot._id}>
@@ -118,17 +115,11 @@ const ActiveLotTable = () => {
         <Icon name="file outline" color="orange" bordered size="large"></Icon>
         <Link
           href={{
-            method: "DELETE",
+            pathname: ROUTE_DELETE_LOT,
             query: { id: lot._id },
           }}
         >
-          <Icon
-            name="delete"
-            onClick={handleDeleteLot}
-            color="red"
-            bordered
-            size="large"
-          ></Icon>
+          <Icon name="delete" color="red" bordered size="large"></Icon>
         </Link>
       </Table.Cell>
     </Table.Row>
