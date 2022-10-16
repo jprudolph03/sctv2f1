@@ -53,22 +53,22 @@ const Navbar = () => {
             </div>
             <i aria-hidden="true" className="dropdown icon"></i>
             <div className="menu transition visible">
-              <Link href="/ForgingScrap">
+              <Link href="/forgingScrap">
                 <div aria-roledescription="option" className="item">
                   Forging Scrap Reporting
                 </div>
               </Link>
-              <Link href="/PressingScrap">
+              <Link href="/pressingScrap">
                 <div aria-roledescription="option" className="item">
                   Pressing Scrap Reporting
                 </div>
               </Link>
-              <Link href="/TappingScrap">
+              <Link href="/tappingScrap">
                 <div aria-roledescription="option" className="item">
                   Tapping Scrap Reporting
                 </div>
               </Link>
-              <Link href="/VsPackScrap">
+              <Link href="/vsPackScrap">
                 <div aria-roledescription="option" className="item">
                   VS/Pack Scrap Reporting
                 </div>
