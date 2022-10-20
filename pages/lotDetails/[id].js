@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Icon, Label, Menu, Table, Header } from "semantic-ui-react";
 import TestBarEx from "../../components/TestBarEx";
+import LotLeaderNotes from "../../components/LotLeaderNotes";
 
 const DetailID = () => {
   const router = useRouter();
@@ -114,6 +115,7 @@ const DetailID = () => {
         </Table.Header>
         <Table.Body>{infoTable}</Table.Body>
       </Table>
+      <LotLeaderNotes note="Something Something Darkside" />
       <TestBarEx
         t1Data={[
           ForgTTotal,

@@ -10,7 +10,6 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { faker } from "@faker-js/faker";
 
 import LossDeptChart from "./LossDeptChart";
 const TestBarEx = (t1Data) => {
@@ -24,7 +23,6 @@ const TestBarEx = (t1Data) => {
   );
 
   const ext = t1Data.t1Data[4] ? t1Data.t1Data[4] : null;
-  console.log(ext, "fu");
 
   const options = {
     responsive: true,
@@ -81,12 +79,6 @@ const TestBarEx = (t1Data) => {
             <LossDeptChart t1Data={t1Data} />
           </Segment>
         </Grid.Column>
-        {/* <Grid.Column width={8}>
-          <Segment>
-            <Header as="h2">Felt Cute</Header>
-            <FeltCuteChart />
-          </Segment>
-        </Grid.Column> */}
       </Grid>
     </>
   );

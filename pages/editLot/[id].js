@@ -85,12 +85,20 @@ const EditLot = ({ lotID }) => {
           <input placeholder={editLot.ForgingScrap} />
         </Form.Field>
         <Form.Field>
+          <label>*Forging Note:</label>
+          <input placeholder="someting something darkside" />
+        </Form.Field>
+        <Form.Field>
           <label>Pressing Counter Total: </label>
           <input placeholder={editLot.PressingCounterTotal} />
         </Form.Field>
         <Form.Field>
           <label>Pressing Scrap Weight: </label>
           <input placeholder={editLot.PressingScrap} />
+        </Form.Field>
+        <Form.Field>
+          <label>*Pressing Note:</label>
+          <input />
         </Form.Field>
         <Form.Field>
           <label>Tapping Counter Total: </label>
@@ -101,12 +109,20 @@ const EditLot = ({ lotID }) => {
           <input placeholder={editLot.TappingScrap} />
         </Form.Field>
         <Form.Field>
+          <label>*Tapping Note:</label>
+          <input />
+        </Form.Field>
+        <Form.Field>
           <label>VS / Pack Counter Total: </label>
           <input placeholder={editLot.VSPackCounterTotal} />
         </Form.Field>
         <Form.Field>
           <label>VS / Pack Scrap Weight: </label>
           <input placeholder={editLot.VSPackScrap} />
+        </Form.Field>
+        <Form.Field>
+          <label>*VS / Pack Note:</label>
+          <input />
         </Form.Field>
         <Button basic color="orange">
           Update Lot

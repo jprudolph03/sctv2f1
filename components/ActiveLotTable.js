@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import Link from "next/link";
 import { Table, Header, Icon, Step, StepContent } from "semantic-ui-react";
 
@@ -26,9 +27,9 @@ const ActiveLotTable = () => {
   const gTable = activeLots?.map((lot) => (
     <Table.Row key={lot._id}>
       <Table.Cell>
-        <a href={`https://scrap-tracker.herokuapp.com/api/lot/${lot._id}`}>
+        <Header as="h5">
           {lot.num} | {lot.partName}
-        </a>
+        </Header>
       </Table.Cell>
       <Table.Cell>{lot.eXt}</Table.Cell>
       <Table.Cell>
@@ -113,14 +114,14 @@ const ActiveLotTable = () => {
           <Icon name="edit" color="green" bordered size="large"></Icon>
         </Link>
         <Icon name="file outline" color="orange" bordered size="large"></Icon>
-        <Link
+        {/* <Link
           href={{
             pathname: ROUTE_DELETE_LOT,
             query: { id: lot._id },
           }}
         >
           <Icon name="delete" color="red" bordered size="large"></Icon>
-        </Link>
+        </Link> */}
       </Table.Cell>
     </Table.Row>
   ));

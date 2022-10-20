@@ -4,7 +4,6 @@ import { Doughnut } from "react-chartjs-2";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const LossDeptChart = (t1Data) => {
-  console.log(t1Data.t1Data.t1Data[2]);
   const fT = t1Data.t1Data.t1Data[0];
   const pT = t1Data.t1Data.t1Data[1];
   const tT = t1Data.t1Data.t1Data[2];
